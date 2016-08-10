@@ -124,11 +124,13 @@ dct:creator:
 
 dct:description: "Developed at Cincinnati Children’s Hospital Medical Center for the CWL consortium http://commonwl.org/ Original URL: https://github.com/common-workflow-language/workflows"
 
+cwlVersion: draft-3
+
 
 requirements:
   - class: DockerRequirement
     dockerPull: "quay.io/cancercollaboratory/dockstore-tool-samtools-view"
-  - { import: node-engine.cwl }
+  - class: InlineJavascriptRequirement
 
 inputs:
   - id: "#input"
@@ -316,18 +318,6 @@ outputs:
   - id: "#output"
     type: File
     outputBinding:
-      glob:
-        engine: cwl:JsonPointer
-        script: /job/output_name
+      glob: $(inputs.output_name)
 
 baseCommand: ["samtools", "view"]
-
-arguments:
-  - valueFrom:
-      engine: node-engine.cwl
-      script: |
-        { if ($job['readtagtostrip'])
-            $job['readtagtostrip'].map(function(i) {return "-x"+i;});
-          else return [];
-        }
-

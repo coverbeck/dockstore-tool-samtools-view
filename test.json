@@ -1,0 +1,18 @@
+{
+  "fastcompression": false,
+  "collapsecigar": false,
+  "samheader": false,
+  "count": false,
+  "uncompressed": false,
+  "output_name": "rna.SRR948778.bam.out",
+  "output": {
+    "path": "rna.SRR948778.bam.out",
+    "class": "File"
+  },
+  "input": {
+    "path": "rna.SRR948778.bam",
+    "class": "File"
+  },
+  "iscram": false,
+  "isbam": false
+}
