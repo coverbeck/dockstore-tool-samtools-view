@@ -16,7 +16,7 @@ cwlVersion: v1.0
 
 requirements:
 - class: DockerRequirement
-  dockerPull: quay.io/cancercollaboratory/dockstore-tool-samtools-view
+  dockerPull: quay.io/cancercollaboratory/dockstore-tool-samtools-view:1.0
 - class: InlineJavascriptRequirement
 
 inputs:
